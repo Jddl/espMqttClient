@@ -208,7 +208,7 @@ class MqttClientSetup : public MqttClient {
   */
 
  protected:
-  explicit MqttClientSetup(espMqttClientTypes::UseInternalTask useInternalTask, uint8_t priority = 1, uint8_t core = 1)
+  explicit MqttClientSetup(espMqttClientTypes::UseInternalTask useInternalTask, uint8_t priority = 1, uint8_t core = 0)
   : MqttClient(useInternalTask, priority, core) {
     #if EMC_MULTIPLE_CALLBACKS
     _onConnectCallback = [this](bool sessionPresent) {
